@@ -10,7 +10,11 @@ for file in files:
     new_name = file.split('.')
     new_name = new_name[0] + '.png'
     image_path = os.path.join(original_path, file)
-    print(image_path)
+    new_path = os.path.join(new_path, new_name)
+    image = Image.open(image_path)
+    image.save(new_path)
+    
+
     
 
 
