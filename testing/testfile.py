@@ -10,5 +10,6 @@ for file in files:
     new_path = os.path.join(new_path, file)
     with open(new_path, 'w') as f1:
         f1.write(lines)
+        
 
     
