@@ -13,8 +13,9 @@ for file in files:
     new_path = os.path.join(new_path, new_name)
     image = Image.open(image_path)
     image.save(new_path)
-    
-
-    
-
-
+    picture = cv2.imread(new_path)
+    height, width = picture.shape[:2]
+    w, h = (256, 256)
+    temp = cv2.resize(picture, (w, h), interpolation = cv2.INTER_LINEAR)
+    output = cv2.resize(temp, (width, height), interpolation=cv2.INTER_LINEAR)
+    cv2.imwrite(new_path, output)
